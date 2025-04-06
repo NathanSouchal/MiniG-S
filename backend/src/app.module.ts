@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PropertiesModule } from './properties/properties.module';
-import { Property } from './properties/properties.model';
+import { PropertyModule } from './property/property.module';
+import { Property } from './property/property.model';
 
 @Module({
   imports: [
@@ -14,7 +14,7 @@ import { Property } from './properties/properties.model';
       synchronize: true,
       models: [Property],
     }),
-    PropertiesModule,
+    PropertyModule,
   ],
   controllers: [AppController],
   providers: [AppService],

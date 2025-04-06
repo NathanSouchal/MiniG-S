@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Property } from './properties.model';
+import { Property } from './property.model';
 import { NotFoundException } from '@nestjs/common';
 import { CreatePropertyDto } from './dto/create-property.dto';
 import { UpdatePropertyDto } from './dto/update-property.dto';
 
 
 @Injectable()
-export class PropertiesService {
+export class PropertyService {
   constructor(
     @InjectModel(Property)
     private propertyModel: typeof Property,

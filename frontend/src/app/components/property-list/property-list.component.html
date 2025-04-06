@@ -1,0 +1,6 @@
+<h2>Liste des propriétés</h2>
+<ul>
+  <li *ngFor="let property of properties">
+    {{ property.name }} – {{ property.address }} ({{ property.year }}) - {{ property.numberOfHousingUnits }} logements
+  </li>
+</ul>
