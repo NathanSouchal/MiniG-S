@@ -1,10 +1,21 @@
 import { Module } from '@nestjs/common';
+import { SequelizeModule } from '@nestjs/sequelize';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { BuildingsModule } from './buildings/buildings.module';
+import { PropertiesModule } from './properties/properties.module';
+import { Property } from './properties/properties.model';
 
 @Module({
-  imports: [BuildingsModule],
+  imports: [
+    SequelizeModule.forRoot({
+      dialect: 'sqlite',
+      storage: './database.sqlite',
+      autoLoadModels: true,
+      synchronize: true,
+      models: [Property],
+    }),
+    PropertiesModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
