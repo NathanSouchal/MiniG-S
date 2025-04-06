@@ -25,12 +25,4 @@ export class PropertyService {
   create(property: Property): Observable<Property> {
     return this.http.post<Property>(this.apiUrl, property);
   }
-
-  update(id: number, property: Partial<Property>): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, property);
-  }
-
-  delete(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
-  }
 }
